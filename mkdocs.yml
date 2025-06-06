@@ -1,0 +1,37 @@
+site_name: NeuroNexo Tec
+
+nav:
+  - Home: ./comunidad/introduccion.md
+  - Inicio:
+    - Nuestra mision: ./comunidad/mision.md
+    - Nuestra vision: ./comunidad/vision.md
+    - Nuestros principios: ./comunidad/principios.md
+    - Codigo de conducta: ./comunidad/codigo-conducta.md
+    - Como puedes participar: ./comunidad/como-participar.md
+    - Licencia: ./comunidad/licencia.md
+  - Desarrollo:
+    - Buenas practicas: ./desarrollo/buenas-practicas.md
+    - Error Handling Standard:
+      - Introduccion: ./desarrollo/error-handler/introduccion.md
+      - Estructura de respuestas: ./desarrollo/error-handler/respuestas.md
+      - Clasificacion de errores: ./desarrollo/error-handler/clasificacion-errores.md
+
+theme: 
+  name: material
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+  locale: es
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+repo_url: https://github.com/example/repository/
+
