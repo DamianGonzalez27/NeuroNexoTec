@@ -1,4 +1,7 @@
-site_name: NeuroNexo Tec
+site_name: NeuroNexoTec
+
+extra:
+  favicon: img/logo.png
 
 nav:
   - Home: ./comunidad/introduccion.md
@@ -18,6 +21,8 @@ nav:
 
 theme: 
   name: material
+  logo: img/logo.png
+  favicon: img/logo.png
   palette:
     # Dark Mode
     - scheme: slate
