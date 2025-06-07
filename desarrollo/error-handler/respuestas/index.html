@@ -1,0 +1,1287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../introduccion/">
+      
+      
+        <link rel="next" href="../clasificacion-errores/">
+      
+      
+      <link rel="icon" href="../../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Estructura de respuestas - NeuroNexoTec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estructura-de-respuestas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroNexoTec" class="md-header__button md-logo" aria-label="NeuroNexoTec" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroNexoTec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Estructura de respuestas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/example/repository/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroNexoTec" class="md-nav__button md-logo" aria-label="NeuroNexoTec" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    NeuroNexoTec
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/example/repository/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comunidad/introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comunidad/mision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nuestra mision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comunidad/vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nuestra vision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comunidad/principios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nuestros principios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comunidad/codigo-conducta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Codigo de conducta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comunidad/como-participar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Como puedes participar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comunidad/licencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licencia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../buenas-practicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas practicas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Error Handling Standard
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Error Handling Standard
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduccion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Estructura de respuestas
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructura de respuestas
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#regla-inamovible" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔏 Regla inamovible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔋 Interpretacion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Estructuras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Estructuras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-body-response-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura Body Response simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-body-response-validaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura Body Response validaciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicacion-de-cada-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explicación de cada campo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#justificacion-del-formato" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Justificación del Formato
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Justificación del Formato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trazabilidad-y-observabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trazabilidad y Observabilidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-programatico-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo programático de errores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estandarizacion-trans-api-y-multi-servicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estandarización trans-API y multi-servicio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejor-experiencia-para-qa-soporte-y-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mejor experiencia para QA, soporte y frontend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-propagacion-de-trace-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Propagación de Trace ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-logging-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Logging Estructurado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-compatibilidad-multilenguaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Compatibilidad Multilenguaje
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-documentacion-del-contrato-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Documentación del Contrato de Errores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validacion-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validación Automática
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-observabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Observabilidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-comunidad-y-futuro" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Comunidad y Futuro
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clasificacion-errores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clasificacion de errores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#regla-inamovible" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔏 Regla inamovible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔋 Interpretacion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Estructuras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Estructuras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-body-response-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura Body Response simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-body-response-validaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura Body Response validaciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicacion-de-cada-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Explicación de cada campo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#justificacion-del-formato" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Justificación del Formato
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 Justificación del Formato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trazabilidad-y-observabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trazabilidad y Observabilidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manejo-programatico-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo programático de errores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estandarizacion-trans-api-y-multi-servicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estandarización trans-API y multi-servicio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mejor-experiencia-para-qa-soporte-y-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mejor experiencia para QA, soporte y frontend
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-propagacion-de-trace-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Propagación de Trace ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-logging-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Logging Estructurado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-compatibilidad-multilenguaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Compatibilidad Multilenguaje
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-documentacion-del-contrato-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Documentación del Contrato de Errores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validacion-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validación Automática
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-observabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Observabilidad
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-comunidad-y-futuro" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Comunidad y Futuro
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="estructura-de-respuestas">Estructura de respuestas</h1>
+<h2 id="regla-inamovible">🔏 Regla inamovible</h2>
+<p>Todas las respuestas de error deben tener el siguiente formato JSON</p>
+<h2 id="interpretacion">🔋 Interpretacion</h2>
+<p>Un formato estandarizado para las respuestas de error no es un detalle menor. Es una pieza clave para la observabilidad, trazabilidad, experiencia de desarrollador (DX) y robustez de los sistemas distribuidos. Un buen formato no solo ayuda a automatizar el manejo de errores, sino también a que humanos (equipo de soporte, QA, DevOps, frontend) puedan entender y actuar sobre el error eficientemente.</p>
+<h2 id="estructuras">⚙️ Estructuras</h2>
+<h4 id="estructura-body-response-simple">Estructura <code>Body Response</code> simple</h4>
+<pre><code class="language-json">{
+  &quot;timestamp&quot;: &quot;2025-05-29T20:00:00Z&quot;,
+  &quot;status&quot;: 500,
+  &quot;error&quot;: &quot;Internal Server Error&quot;,
+  &quot;code&quot;: &quot;USR_001&quot;,
+  &quot;message&quot;: &quot;Error con la comunicacion del servidor&quot;,
+  &quot;path&quot;: &quot;/api/v1/users&quot;,
+  &quot;traceId&quot;: &quot;123e4567-e89b-12d3-a456-426614174000&quot;
+}
+</code></pre>
+<h4 id="estructura-body-response-validaciones">Estructura <code>Body Response</code> validaciones</h4>
+<pre><code class="language-json">{
+  &quot;timestamp&quot;: &quot;2025-05-29T20:00:00Z&quot;,
+  &quot;status&quot;: 422,
+  &quot;error&quot;: &quot;Validation error&quot;,
+  &quot;code&quot;: &quot;USR_001&quot;,
+  &quot;message&quot;: &quot;Error de validacion de campos&quot;,
+  &quot;path&quot;: &quot;/api/v1/users&quot;,
+  &quot;traceId&quot;: &quot;123e4567-e89b-12d3-a456-426614174000&quot;,
+  &quot;errors&quot;: {
+    &quot;fieldName&quot;: {
+        &quot;message&quot;: &quot;[fieldName] no puede ser vacio.&quot;
+    }
+  }
+}
+</code></pre>
+<h2 id="explicacion-de-cada-campo">🔍 Explicación de cada campo</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Campo</th>
+<th style="text-align: center;">Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>timestamp</strong></td>
+<td style="text-align: center;"><code>string</code></td>
+<td>(ISO 8601)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>status</strong></td>
+<td style="text-align: center;"><code>number</code></td>
+<td>Código HTTP numérico que describe el tipo de error (por ejemplo: 400, 404, 500). Es lo que evalúan los clientes y gateways.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>error</strong></td>
+<td style="text-align: center;"><code>string</code></td>
+<td>Descripción textual corta del error HTTP (por ejemplo: "Bad Request", "Unauthorized"). Útil para debug rápido o lectura por humanos.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>code</strong></td>
+<td style="text-align: center;">string</td>
+<td>Código interno del sistema, único y estandarizado (por ejemplo: USR_001, AUTH_403_001). Es el identificador principal del tipo de error para el backend, frontend, documentación, métricas, y</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>message</strong></td>
+<td style="text-align: center;"><code>string</code></td>
+<td>Mensaje legible explicando la causa del error, pensado para ser mostrado al usuario final o a un desarrollador. Debe ser claro y conciso.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>path</strong></td>
+<td style="text-align: center;"><code>string</code></td>
+<td>El endpoint que generó el error. Facilita el rastreo sin necesidad de logs adicionales. Ideal para sistemas con múltiples APIs.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>requestId</strong></td>
+<td style="text-align: center;"><code>string</code></td>
+<td>UUID generado en cada request entrante (por gateway o interceptor). Permite correlación 1:1 entre logs, errores, trazas y métricas. Fundamental en entornos concurrentes y distribuidos.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>errors</strong></td>
+<td style="text-align: center;"><code>object</code></td>
+<td>Es un objeto que brindara informacion puntual sobre errores de validacion de campos en un request del tipo POST por ejemplo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="justificacion-del-formato">🧠 Justificación del Formato</h2>
+<h3 id="trazabilidad-y-observabilidad">Trazabilidad y Observabilidad</h3>
+<ul>
+<li><code>timestamp</code>, <code>path</code> y <code>requestId</code> permiten rastrear un error desde una alerta en Grafana hasta el log detallado en Elasticsearch o CloudWatch, pasando por el trace en OpenTelemetry.</li>
+</ul>
+<h3 id="manejo-programatico-de-errores">Manejo programático de errores</h3>
+<ul>
+<li><code>code</code> es clave para que el frontend o cualquier cliente automatice respuestas. Por ejemplo: si code = AUTH_401_001, mostrar login; si code = USR_001, mostrar error de formulario.</li>
+</ul>
+<h3 id="estandarizacion-trans-api-y-multi-servicio">Estandarización trans-API y multi-servicio</h3>
+<ul>
+<li>En sistemas con muchos microservicios, compartir un mismo esquema evita inconsistencias, bugs y horas de debugging porque ya se conoce el contrato.</li>
+</ul>
+<h3 id="mejor-experiencia-para-qa-soporte-y-frontend">Mejor experiencia para QA, soporte y frontend</h3>
+<ul>
+<li>Saber qué ocurrió y por qué, sin necesidad de abrir los logs o tener acceso a infraestructura. El código y mensaje permiten crear una wiki de errores mantenible.</li>
+</ul>
+<h2 id="4-propagacion-de-trace-id">4. Propagación de Trace ID</h2>
+<ul>
+<li>El sistema debe aceptar el header <code>X-Trace-Id</code>.</li>
+<li>Si no viene, debe generarse un UUID v4 por petición.</li>
+<li>Debe propagarse por todos los logs, respuestas de error y llamadas internas.</li>
+</ul>
+<h2 id="5-logging-estructurado">5. Logging Estructurado</h2>
+<ul>
+<li>Toda excepción capturada debe ser logueada.</li>
+<li>
+<p>El log debe estar en formato JSON con:</p>
+</li>
+<li>
+<p><code>traceId</code></p>
+</li>
+<li><code>type</code>: tipo de error</li>
+<li><code>exception</code>: clase de excepción</li>
+<li><code>message</code>: detalle</li>
+<li><code>stacktrace</code>: solo si está en entorno de desarrollo</li>
+</ul>
+<h2 id="6-compatibilidad-multilenguaje">6. Compatibilidad Multilenguaje</h2>
+<p>Se deben implementar SDKs que respeten este contrato en:</p>
+<ul>
+<li>Java (Spring Boot)</li>
+<li>Node.js (Express, Fastify)</li>
+<li>Python (FastAPI, Flask)</li>
+<li>Go (Gin, Echo)</li>
+</ul>
+<h2 id="7-documentacion-del-contrato-de-errores">7. Documentación del Contrato de Errores</h2>
+<ul>
+<li>Se debe incluir en la especificación OpenAPI (Swagger).</li>
+<li>Todos los endpoints deben declarar sus posibles respuestas de error según este estándar.</li>
+</ul>
+<h2 id="8-validacion-automatica">8. Validación Automática</h2>
+<ul>
+<li>Se recomienda usar linters, pruebas o validadores que aseguren el cumplimiento del estándar en CI/CD.</li>
+</ul>
+<h2 id="9-observabilidad">9. Observabilidad</h2>
+<p>Este estándar está diseñado para integrarse de forma natural con:</p>
+<ul>
+<li>OpenTelemetry</li>
+<li>Grafana Loki</li>
+<li>Sentry</li>
+<li>Datadog</li>
+<li>Zipkin / Jaeger</li>
+</ul>
+<h2 id="10-comunidad-y-futuro">10. Comunidad y Futuro</h2>
+<p>Este documento está en fase de borrador. Está abierto a iteraciones junto a la comunidad.</p>
+<blockquote>
+<p>Si deseas participar, sugerir mejoras o implementar este estándar en tu organización, contáctanos. Estamos construyendo una suite de herramientas, SDKs y guías para que la adopción sea inmediata y eficaz.</p>
+</blockquote>
+<hr />
+<p><strong>Versión</strong>: 0.1
+<strong>Autor</strong>: Damian + Lumen
+<strong>Licencia</strong>: NeuroNexo Tec - Uso libre, contribución controlada</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
