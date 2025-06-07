@@ -10,10 +10,19 @@ nav:
     - Como puedes participar: ./comunidad/como-participar.md
     - Licencia: ./comunidad/licencia.md
   - Desarrollo:
-    - Manejador de errores http:
+    - Manejador de errores:
       - Introduccion: ./desarrollo/error-handler/introduccion.md
-      - Estructura de respuestas: ./desarrollo/error-handler/respuestas.md
-      - Clasificacion de errores: ./desarrollo/error-handler/clasificacion-errores.md
+      - Modelos estándar: ./desarrollo/error-handler/modelo-estandar.md
+      - Clasificación de errores: ./desarrollo/error-handler/clasificacion-errores.md
+      - Captura y propagación: ./desarrollo/error-handler/captura-propagacion.md
+      - Centralizacion de captura: ./desarrollo/error-handler/centralizacion-captura.md
+      - Resilencia y recupercaión: ./desarrollo/error-handler/resilencia-recupercaion.md
+      - Seguridad y sanitización: ./desarrollo/error-handler/seguridad-sanitizacion.md
+      - Monitoreo: ./desarrollo/error-handler/monitoreo.md
+      - SDK's: 
+        - Java: ./desarrollo/error-handler/sdk/java.md
+        - PHP: ./desarrollo/error-handler/sdk/php.md
+      - Glosario: ./desarrollo/error-handler/glosario.md
 
 theme: 
   name: material

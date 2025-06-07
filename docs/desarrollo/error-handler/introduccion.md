@@ -1,135 +1,122 @@
-# Error Handling Standard - v1.1
-## 🧭 Introducción
+# Estándar de manejo de errores NNXT - v1.0
 
-En los sistemas distribuidos modernos los errores no son una posibilidad: son una certeza. Ya sea por un fallo en una base de datos, un proveedor de correo caído o un bug inesperado en una librería de terceros, los errores forman parte del ciclo de vida de cualquier sistema en producción.
+El manejo de errores, o error handling, es una práctica fundamental en el diseño e implementación de sistemas de software robustos, seguros y mantenibles. Consiste en el conjunto de técnicas, estructuras, patrones y convenciones que permiten a una aplicación detectar, capturar, interpretar y responder de manera controlada a las situaciones anómalas o fallas que se presentan durante su ejecución. Estas situaciones pueden ser tan diversas como un valor de entrada inválido, un fallo de red, un error en la lógica de negocio o una excepción no anticipada en una dependencia externa.
 
-El presente estandar tiene como objetivo que puedas implementar una solucion adecuada para el manejo de los errores que ocurren en el programa.
+En esencia, un error handler no se limita a atrapar errores, sino que establece un marco estructurado para su clasificación, propagación, registro, monitoreo, sanitización y comunicación hacia otras capas del sistema o hacia el consumidor final. Su implementación adecuada es crítica en entornos donde se busca garantizar alta disponibilidad, consistencia operativa, resiliencia, y observabilidad del sistema.
 
-❗ ¿Por qué es importante aplicar un Error Handler?
-Un error handler bien diseñado no solo captura excepciones: estructura y comunica los errores, proporciona trazabilidad, y garantiza una experiencia de desarrollo más profesional y mantenible.
+##  Propósito del Error Handler
+---
+La implementación del estándar de manejo de errores NNXT tiene como objetivos principales:
 
-## Escenarios comunes donde es clave:
+- **Predecibilidad**: Evitar comportamientos erráticos ante fallos.
+- **Seguridad**: Prevenir la exposición de detalles internos o sensibles al usuario o atacante.
+- **Trazabilidad**: Permitir la reconstrucción del contexto de un error a través de logs y métricas.
+- **Aislamiento de capas**: Evitar que detalles de bajo nivel (como una excepción de base de datos) se filtren hacia niveles más altos (como la lógica de negocio o la interfaz de usuario).
+- **Facilidad de mantenimiento y debugging**: Proveer información estructurada para resolver incidencias de forma eficiente.
+- **Mejora en la experiencia del usuario**: Informar fallos de manera clara, coherente y útil.
 
-📬 Servicios de terceros fallan: como SMTP, Twilio o AWS SES. Necesitás capturar el error y responder de forma coherente al cliente.
+## Capas de implementación del manejo de errores
+---
+El manejo de errores debe implementarse en múltiples niveles de la arquitectura de software, cada uno con responsabilidades y alcance bien definidos:
 
-🧾 Errores de validación: un input malformado puede terminar en una NullPointerException si no se maneja adecuadamente.
+**Capa de infraestructura**: Se encarga de capturar errores provenientes de servicios externos, bases de datos, sistemas de archivos, redes o cualquier otro recurso técnico. En esta capa es fundamental encapsular errores técnicos para que no afecten el dominio de negocio directamente.
 
-⚠️ Fallos de lógica interna: como intentos de reenvío a direcciones inválidas o proveedores no soportados.
+**Capa de dominio**: Aquí se expresan errores propios del modelo de negocio, como reglas violadas o estados no válidos. Estos errores no están relacionados con fallas técnicas, sino con inconsistencias en el comportamiento esperado del sistema.
 
-🔐 Errores de autenticación/autorización: por falta de credenciales válidas o permisos insuficientes.
+**Capa de aplicación / servicios**: Se encarga de orquestar la lógica de negocio y de capturar, mapear o traducir errores provenientes del dominio o la infraestructura hacia respuestas coherentes que puedan ser comprendidas por otras partes del sistema.
 
-Sin un handler claro, tus APIs terminan lanzando trazas de pila crudas (stacktraces), mensajes confusos o errores silenciosos que son un infierno para debuggear y una pesadilla para tus usuarios.
+**Capa de presentación o interfaz**: Es la responsable de comunicar el error de manera estructurada, consistente y segura a los consumidores del sistema (ya sean humanos o máquinas, como clientes HTTP, móviles o aplicaciones externas).
 
-## 🌟 Beneficios de tener un Error Handler centralizado
-1. Uniformidad de respuestas
-Todas las APIs responden con una estructura estándar, por ejemplo:
+**Capa de observabilidad (logging, métricas, trazas)**: Aunque transversal, es esencial para registrar los errores con el contexto necesario para análisis posterior, correlación de eventos, diagnóstico de causas raíz y alertas operativas.
+
+## Componentes esenciales del estándar de manejo de errores
+---
+La implementacion del Estándar de manejo de errores NNXT incluye los siguientes componentes:
+
+### 1. Modelo estructurado de error
+---
+Se establece un formato común para representar errores. Esto incluye campos como código de error, mensaje, nivel de severidad, tipo de error, detalles adicionales, marca de tiempo y un identificador de trazabilidad (``preferentemente UUID``). Más adelante profundizaremos en la estructura de las respuestas.
+
+Por ejemplo, una API debe devolver un error estructurado como:
 
 ~~~json
 {
-  "timestamp": "2025-05-29T15:30:00Z",
-  "status": 400,
-  "error": "Bad Request",
-  "message": "El campo 'to' no puede estar vacío.",
-  "traceId": "9e582edc-087a-4a9e-b8d6-b7a88fc5a935"
+  "error_code": "USER_NOT_FOUND",
+  "message": "No se encontró un usuario con el identificador proporcionado",
+  "status": 404,
+  "details": [
+    { "field": "userId", "issue": "Valor inválido o inexistente" }
+  ],
+  "trace_id": "req-abc123-def456"
 }
 ~~~
 
-2. Trazabilidad mejorada
-Cada error incluye un traceId único (usualmente pasado como header) para correlacionar eventos en logs, métricas y dashboards.
+El **modelo estandar** facilita el consumo automático de errores por otras aplicaciones, así como la generación de métricas y análisis por parte de los equipos de desarrollo y operaciones.
 
-3. Facilidad para el monitoreo y alertas
-Con este sistema podés integrar herramientas como Grafana, Prometheus o Sentry, y disparar alertas ante ciertos tipos de errores.
+### 2. Clasificación semántica de errores
+---
+Es esencial clasificar los errores en categorías bien definidas para que el sistema pueda responder adecuadamente según el contexto. Algunas categorías comunes incluyen:
 
-4. Menor acoplamiento con clientes
-Los clientes de tus APIs no necesitan interpretar errores según el tipo de excepción Java: les das un contrato claro de qué esperar.
+- **Errores de validación**: Ocurren cuando los datos de entrada no cumplen los criterios establecidos (ej. formato de correo electrónico inválido).
+- **Errores de dominio**: Representan violaciones de reglas de negocio (ej. intentar realizar una transferencia con fondos insuficientes).
+- **Errores técnicos**: Derivan de fallos en dependencias externas (como servicios de terceros, bases de datos, colas de mensajería).
+- **Errores inesperados**: o de sistema: Son fallos imprevistos que indican errores de implementación o condiciones no controladas (como excepciones no capturadas o corrupción de estado).
 
-## 🛠️ Pasos para implementar el Error Handler
-✅ 1. Definí tus errores personalizados
-~~~java
-public class EmailSendException extends RuntimeException {
-    public EmailSendException(String message) {
-        super(message);
-    }
-}
-~~~
-Opcionalmente podés crear una jerarquía como ApplicationException con códigos y niveles de severidad.
+Esta clasificación permite definir políticas diferenciadas para el tratamiento, logueo, reintento, notificación o escalado.
 
-✅ 2. Implementá un handler global
-Usá @ControllerAdvice y @ExceptionHandler:
+### 3. Mecanismos de captura y propagación controlada
+---
+El ```Estándar de manejo de errores NNXT``` define cómo y dónde capturar errores, y cómo deben propagarse entre capas. Por ejemplo:
 
-~~~java
-@RestControllerAdvice
-public class GlobalExceptionHandler {
+- Un error técnico de infraestructura se encapsula en una excepción más abstracta antes de llegar a la capa de aplicación.
+- Un error de dominio puede propagarse directamente para ser manejado por el servicio que lo invoca.
+- Un error inesperado se captura globalmente y se responde de forma genérica al consumidor para evitar fuga de información interna.
 
-    @ExceptionHandler(EmailSendException.class)
-    public ResponseEntity<ErrorResponse> handleEmailSend(EmailSendException ex) {
-        return buildResponse(HttpStatus.SERVICE_UNAVAILABLE, ex.getMessage());
-    }
+Esto garantiza que los errores no se escapen de su contexto ni revelen detalles innecesarios.
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGeneric(Exception ex) {
-        return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Error inesperado.");
-    }
+### 4. Manejo centralizado y punto único de captura
+---
+Todo error que no sea manejado explícitamente debe ser capturado por un mecanismo centralizado. Esto puede ser un middleware, interceptor, filtro o decorador, dependiendo del entorno y lenguaje utilizado. Este componente central debe encargarse de:
 
-    private ResponseEntity<ErrorResponse> buildResponse(HttpStatus status, String message) {
-        return new ResponseEntity<>(
-            new ErrorResponse(
-                Instant.now().toString(),
-                status.value(),
-                status.getReasonPhrase(),
-                message,
-                RequestContext.getRequestId()
-            ),
-            status
-        );
-    }
-}
-~~~
+- Convertir errores en una respuesta adecuada al consumidor.
+- Registrar el error con todo el contexto disponible.
+- Asociar el error a un identificador de trazabilidad.
+- Notificar, si corresponde, a sistemas de monitoreo o alertas.
 
-✅ 3. Diseñá un modelo estándar para las respuestas de error
+Este enfoque reduce la duplicación de lógica de manejo y garantiza consistencia en la experiencia de error.
 
-~~~java
-@Data
-@AllArgsConstructor
-public class ErrorResponse {
-    private String timestamp;
-    private int status;
-    private String error;
-    private String message;
-    private String traceId;
-}
-~~~
+### 5. Estrategias de resiliencia y recuperación
+---
+El ```Estándar de manejo de errores NNXT``` tambien contempla cómo responder a errores transitorios (por ejemplo, un timeout de red), definiendo políticas como:
 
-✅ 4. Usá RequestContext para mantener el traceId
-Este componente se puede poblar en un filtro que lea el header:
+- Reintentos automáticos con backoff exponencial.
+- Circuit breakers para evitar sobrecarga.
+- Fallbacks definidos para continuar con funcionalidad limitada.
 
-~~~java
-@Component
-public class TraceIdFilter extends OncePerRequestFilter {
-    @Override
-    protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain)
-            throws ServletException, IOException {
-        String traceId = request.getHeader("X-Trace-Id");
-        RequestContext.setRequestId(traceId != null ? traceId : UUID.randomUUID().toString());
-        try {
-            filterChain.doFilter(request, response);
-        } finally {
-            RequestContext.clear();
-        }
-    }
-}
-~~~
+No todos los errores deben ser motivo de fallo total. Un diseño resiliente considera que algunos errores pueden ser tratados temporal o parcialmente, preservando la continuidad del sistema.
 
-✅ 5. Integra los logs con el traceId
-Tu clase LogObserver o Logger custom debería incluir el traceId en cada mensaje de log para facilitar el seguimiento.
+### 6. Seguridad y sanitización de errores
+---
+Uno de los pilares del manejo de errores es proteger la integridad y seguridad del sistema. Los mensajes de error nunca deben incluir:
 
-🤝 Unite a la comunidad o contactanos
-Si llegaste hasta acá, probablemente ya estés diseñando o manteniendo una API seria. En ese camino, no estás solo.
+- Detalles del stack trace.
+- Información de configuración interna.
+- Mensajes del sistema operativo o del lenguaje.
+- Cadenas de conexión o rutas del sistema de archivos.
 
-Si querés ayuda para implementar tu sistema de errores, conectar con otros desarrolladores o simplemente resolver un bloqueo técnico, podés contactarnos o sumarte a nuestra comunidad.
+Toda respuesta expuesta al usuario o a consumidores externos debe ser cuidadosamente sanitizada y controlada para evitar vulnerabilidades por fuga de información.
 
-📬 ¿Dudas puntuales? Escribinos.
-🧑‍💻 ¿Querés compartir lo que hiciste? ¡Mostralo en la comunidad!
-🔧 ¿Querés una consultoría a medida? Podemos trabajar juntos en eso también.
+### 7. Integración con monitoreo y trazabilidad
+---
+Finalmente, el error handler se integra con las herramientas de observabilidad de la organización. Esto incluye:
+
+- Registros estructurados con nivel de severidad (WARN, ERROR, CRITICAL).
+- Asociar errores a un trace_id para correlación entre servicios.
+- Exportar métricas de error (tasa, frecuencia, origen).
+- Integrarse con dashboards, alertas o sistemas de incident management.
+
+Sin una buena observabilidad, incluso el mejor manejo de errores se vuelve inútil ante un fallo en producción.
+
+## Conclusión
+---
+Implementar el ```Estándar de manejo de errores NNXT``` de manejo de errores no es una tarea trivial ni un detalle accesorio: será una parte esencial de cualquier arquitectura de software moderna. El estándar considera el flujo completo de una falla —desde su origen técnico o de negocio, hasta su manifestación ante el usuario o sistema consumidor— pasando por mecanismos de clasificación, registro, trazabilidad, resiliencia y seguridad. Hacerlo correctamente no sólo mejora la calidad y estabilidad del software, sino que también reduce el costo operativo, facilita el mantenimiento y mejora la experiencia general del sistema frente a condiciones adversas. La inversión en la implementacion del ```Estándar de manejo de errores NNXT``` es, en definitiva, una inversión directa en la confiabilidad del producto.
