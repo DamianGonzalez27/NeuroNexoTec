@@ -1,7 +1,7 @@
 site_name: NeuroNexo Tec
 
 nav:
-  - Home: ./comunidad/introduccion.md
+  - Home: index.md
   - Inicio:
     - Nuestra mision: ./comunidad/mision.md
     - Nuestra vision: ./comunidad/vision.md
@@ -10,8 +10,7 @@ nav:
     - Como puedes participar: ./comunidad/como-participar.md
     - Licencia: ./comunidad/licencia.md
   - Desarrollo:
-    - Buenas practicas: ./desarrollo/buenas-practicas.md
-    - Error Handling Standard:
+    - Manejador de errores http:
       - Introduccion: ./desarrollo/error-handler/introduccion.md
       - Estructura de respuestas: ./desarrollo/error-handler/respuestas.md
       - Clasificacion de errores: ./desarrollo/error-handler/clasificacion-errores.md

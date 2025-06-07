@@ -1,9 +1,9 @@
-# Error Handling Standard - v0.1
+# Error Handling Standard - v1.1
 ## 🧭 Introducción
 
-En los sistemas distribuidos modernos —y especialmente en microservicios como nuestro ```Notification Service```— los errores no son una posibilidad: son una certeza. Ya sea por un fallo en una base de datos, un proveedor de correo caído o un bug inesperado en una librería de terceros, los errores forman parte del ciclo de vida de cualquier sistema en producción.
+En los sistemas distribuidos modernos los errores no son una posibilidad: son una certeza. Ya sea por un fallo en una base de datos, un proveedor de correo caído o un bug inesperado en una librería de terceros, los errores forman parte del ciclo de vida de cualquier sistema en producción.
 
-Esta guía te mostrará cómo diseñar e implementar un sistema de manejo de errores centralizado, robusto y reutilizable, que transforme fallos silenciosos o caóticos en respuestas claras, rastreables y comprensibles tanto para el equipo de desarrollo como para los usuarios finales o integradores del sistema.
+El presente estandar tiene como objetivo que puedas implementar una solucion adecuada para el manejo de los errores que ocurren en el programa.
 
 ❗ ¿Por qué es importante aplicar un Error Handler?
 Un error handler bien diseñado no solo captura excepciones: estructura y comunica los errores, proporciona trazabilidad, y garantiza una experiencia de desarrollo más profesional y mantenible.
